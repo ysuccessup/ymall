@@ -1,0 +1,7 @@
+com\ymall\order\pojo\Order.class
+com\ymall\order\service\OrderService.class
+com\ymall\order\mapper\OrderMapper.class
+com\ymall\order\job\PaymentOrderJob.class
+com\ymall\order\pojo\OrderShipping.class
+com\ymall\order\controller\OrderController.class
+com\ymall\order\pojo\OrderItem.class

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ymall.order.mapper.OrderMapper">
+	<!-- 按订单号查询订单（物流，商品） autoMapping会自动驼峰规则映射 -->
+	<resultMap type="Order" id="orderRM" autoMapping="true">
+		<id property="orderId" column="order_id"/>
+		
+		<!-- 订单和物流一对一，必须放在前面 -->
+		<association property="orderShipping" select="orderShippingByOrderId" javaType="OrderShipping" column="order_id">
+			<id property="orderId" column="order_id"/>
+		</association>
+		
+		<!-- 订单和商品，一对多 -->
+		<collection property="orderItems" select="orderItemByOrderId" javaType="ArrayList" ofType="OrderItem" column="order_id">
+			<id property="itemId" column="item_id"/>
+			<id property="orderId" column="order_id"/>
+		</collection>
+	</resultMap>
+	
+	<!-- 按订单id查询 -->
+	<select id="queryById" parameterType="string" resultMap="orderRM">
+SELECT * FROM tb_order WHERE order_id = #{orderId}
+	</select>
+	
+	<!-- 某个订单对应物流信息 -->
+	<select id="orderShippingByOrderId" parameterType="string" resultType="OrderShipping">
+SELECT * FROM tb_order_shipping WHERE order_id = #{orderId}
+	</select>
+	
+	<!-- 某个订单对应商品信息 -->
+	<select id="orderItemByOrderId" parameterType="string" resultType="OrderItem">
+SELECT * FROM tb_order_item WHERE order_id = #{orderId}
+	</select>
+	
+	<!-- 创建订单 -->
+	<insert id="create" parameterType="Order">
+insert into tb_order (order_id,payment,payment_type,post_fee,status,payment_time,consign_time,end_time,close_time,shipping_name,shipping_code,user_id,buyer_message,buyer_nick,buyer_rate,created,updated)
+ values(#{orderId},#{payment},#{paymentType},#{postFee},1,#{paymentTime},#{consignTime},#{endTime},#{closeTime},#{shippingName},#{shippingCode},#{userId},#{buyerMessage},#{buyerNick},#{buyerRate},now(),now())
+;
+
+insert into tb_order_shipping (order_id,user_id,receiver_name,receiver_mobile,receiver_state,receiver_city,receiver_address,receiver_zip,created,updated)
+ values(#{orderId},#{orderShipping.userId},#{orderShipping.receiverName},#{orderShipping.receiverMobile},#{orderShipping.receiverState},#{orderShipping.receiverCity},#{orderShipping.receiverAddress},#{orderShipping.receiverZip},now(),now())
+;
+
+ <if test="orderItems != null and orderItems.size() >0">
+insert into tb_order_item (order_id,item_id,num,title,price,total_fee,pic_path)
+ values
+	 <foreach collection="orderItems" item="item" separator=",">
+	 (#{orderId},#{item.itemId},#{item.num},#{item.title},#{item.price},#{item.totalFee},#{item.picPath})
+	 </foreach>
+;
+ </if>
+	</insert>
+	
+	
+	<!-- 处理未支付订单，2天还没有支付，就修改去状态 -->
+	<update id="paymentOrderScan" parameterType="date">
+UPDATE tb_order SET STATUS=6,end_time=NOW(),close_time=NOW() 
+WHERE payment_type=1 AND STATUS=1 AND created &lt; #{date}	
+	</update>
+	
+	<!-- 获取用户的地址 -->
+	<resultMap type="Shipping"  id="shipResultMap">
+		<id column="id" property="id"/>
+		<result column="user_id" property="userId"/>
+		<result column="receiver_name" property="receiverName"/>
+		<result column="receiver_mobile" property="receiverMobile"/>
+		<result column="receiver_state" property="receiverState"/>
+		<result column="receiver_city" property="receiverCity"/>
+		<result column="receiver_address" property="receiverAddress"/>
+		<result column="receiver_zip" property="receiverZip"/>
+		<result column="created" property="created"/>
+		<result column="updated" property="updated"/>
+	</resultMap>
+	
+	<select id="queryAddressByUserId" resultMap="shipResultMap" parameterType="Long" >
+		SELECT * FROM tb_shipping WHERE user_id = #{userId};
+	</select>
+	
+	<insert id="addAddress" parameterType="Shipping">
+		insert into tb_shipping(user_id,receiver_name,receiver_mobile,receiver_state,receiver_city,receiver_address,receiver_zip,created,updated) VALUES (#{userId},#{receiverName},#{receiverMobile},#{receiverState},#{receiverCity},#{receiverAddress},#{receiverZip},now(),now())
+	</insert>
+	
+	<select id="queryOrderItemByUserId" resultType="OrderItem">
+		SELECT * FROM tb_order_item WHERE order_id IN (SELECT order_id FROM tb_order WHERE user_id = #{userId})
+	</select>
+</mapper>

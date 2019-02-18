@@ -1,0 +1,16 @@
+127.0.0.1 - - [28/Mar/2018:12:15:34 +0800] "GET /cart/query/528 HTTP/1.0" 200 265 http-bio-8084-exec-1 909
+127.0.0.1 - - [28/Mar/2018:18:23:25 +0800] "GET /cart/query/528 HTTP/1.0" 200 265 http-bio-8084-exec-2 66
+127.0.0.1 - - [28/Mar/2018:18:24:29 +0800] "GET /cart/query/528 HTTP/1.0" 200 265 http-bio-8084-exec-3 19
+127.0.0.1 - - [28/Mar/2018:18:29:39 +0800] "GET /cart/query/528 HTTP/1.0" 200 265 http-bio-8084-exec-4 19
+127.0.0.1 - - [28/Mar/2018:18:31:37 +0800] "GET /cart/query/528 HTTP/1.0" 200 265 http-bio-8084-exec-5 18
+127.0.0.1 - - [28/Mar/2018:18:39:52 +0800] "GET /cart/query/528 HTTP/1.0" 200 265 http-bio-8084-exec-6 20
+127.0.0.1 - - [28/Mar/2018:18:40:12 +0800] "POST /cart/update/num/528/562379/3 HTTP/1.0" 200 - http-bio-8084-exec-7 42
+127.0.0.1 - - [28/Mar/2018:18:40:12 +0800] "POST /cart/update/num/528/562379/4 HTTP/1.0" 200 - http-bio-8084-exec-8 15
+127.0.0.1 - - [28/Mar/2018:18:40:12 +0800] "POST /cart/update/num/528/562379/5 HTTP/1.0" 200 - http-bio-8084-exec-9 19
+127.0.0.1 - - [28/Mar/2018:18:40:12 +0800] "POST /cart/update/num/528/562379/6 HTTP/1.0" 200 - http-bio-8084-exec-10 17
+127.0.0.1 - - [28/Mar/2018:18:40:13 +0800] "POST /cart/update/num/528/562379/3 HTTP/1.0" 200 - http-bio-8084-exec-1 13
+127.0.0.1 - - [28/Mar/2018:18:40:13 +0800] "POST /cart/update/num/528/562379/2 HTTP/1.0" 200 - http-bio-8084-exec-2 16
+127.0.0.1 - - [28/Mar/2018:18:40:13 +0800] "POST /cart/update/num/528/562379/1 HTTP/1.0" 200 - http-bio-8084-exec-3 16
+127.0.0.1 - - [28/Mar/2018:18:40:33 +0800] "POST /cart/update/num/528/562379/3 HTTP/1.0" 200 - http-bio-8084-exec-4 13
+127.0.0.1 - - [28/Mar/2018:18:40:33 +0800] "POST /cart/update/num/528/562379/4 HTTP/1.0" 200 - http-bio-8084-exec-5 18
+127.0.0.1 - - [28/Mar/2018:18:40:34 +0800] "POST /cart/update/num/528/562379/5 HTTP/1.0" 200 - http-bio-8084-exec-6 86

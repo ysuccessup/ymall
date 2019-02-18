@@ -1,0 +1,5 @@
+com\ymall\sso\pojo\User.class
+com\ymall\sso\mapper\UserMapper.class
+com\ymall\sso\controller\UserController.class
+com\ymall\sso\service\UserService.class
+com\ymall\sso\service\impl\UserServiceImpl.class

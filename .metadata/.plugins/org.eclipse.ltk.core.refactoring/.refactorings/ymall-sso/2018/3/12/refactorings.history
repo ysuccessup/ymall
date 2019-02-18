@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;check&apos; from expression &apos;userService.check(param,type)&apos;&#x0D;&#x0A;- Original project: &apos;ymall-sso&apos;&#x0D;&#x0A;- Variable name: &apos;check&apos;&#x0D;&#x0A;- Destination method: &apos;com.ymall.sso.controller.UserController.check()&apos;&#x0D;&#x0A;- Variable expression: &apos;userService.check(param,type)&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;check&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src\/main\/java&lt;com.ymall.sso.controller{UserController.java" name="check" replace="true" selection="1411 0" stamp="1521623852039" version="1.0"/>
+</session>

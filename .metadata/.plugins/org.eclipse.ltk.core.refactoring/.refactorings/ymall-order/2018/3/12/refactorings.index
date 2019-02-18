@@ -1,0 +1,11 @@
+1521875300531	Move file
+1521875303504	Delete element
+1521875319637	Rename package 'com.jt.store.order.controller'
+1521875335893	Rename package 'com.jt.store.order.dao'
+1521875371281	Rename package 'com.jt.store.order.mapper'
+1521875382622	Rename package 'com.jt.store.order.job'
+1521875392191	Rename package 'com.jt.store.order.util'
+1521875404444	Rename package 'com.jt.store.order.service'
+1521875415318	Rename package 'com.jt.store.order.pojo'
+1521875824385	Delete elements
+1521877034526	Move compilation unit

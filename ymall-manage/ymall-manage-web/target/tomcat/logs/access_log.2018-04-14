@@ -1,0 +1,6 @@
+127.0.0.1 - - [14/Apr/2018:14:43:13 +0800] "GET /item/query/536563 HTTP/1.0" 200 541 http-bio-8081-exec-1 1328
+127.0.0.1 - - [14/Apr/2018:14:43:13 +0800] "GET /item/query/item/desc/536563 HTTP/1.0" 200 2266 http-bio-8081-exec-2 93
+127.0.0.1 - - [14/Apr/2018:14:43:13 +0800] "GET /item/param/item/query/536563 HTTP/1.0" 200 4640 http-bio-8081-exec-3 218
+127.0.0.1 - - [14/Apr/2018:14:48:55 +0800] "GET /item/query/562379 HTTP/1.0" 200 636 http-bio-8081-exec-4 22
+127.0.0.1 - - [14/Apr/2018:14:48:55 +0800] "GET /item/query/item/desc/562379 HTTP/1.0" 200 1504 http-bio-8081-exec-5 67
+127.0.0.1 - - [14/Apr/2018:14:48:55 +0800] "GET /item/param/item/query/562379 HTTP/1.0" 200 3705 http-bio-8081-exec-6 57

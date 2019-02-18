@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.ymall.order.pojo.Ship&apos; to &apos;Shipping&apos;&#x0D;&#x0A;- Original project: &apos;ymall-order&apos;&#x0D;&#x0A;- Original element: &apos;com.ymall.order.pojo.Ship&apos;&#x0D;&#x0A;- Renamed element: &apos;com.ymall.order.pojo.Shipping&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update fully qualified names in &apos;*&apos; files&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Ship&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.ymall.order.pojo{Ship.java[Ship" matchStrategy="1" name="Shipping" patterns="*" qualified="true" references="true" similarDeclarations="false" stamp="1522578546146" textual="false" version="1.0"/>
+</session>

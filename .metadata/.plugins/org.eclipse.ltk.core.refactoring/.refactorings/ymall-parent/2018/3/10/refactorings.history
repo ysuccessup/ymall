@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ymall-parent/smart-web&apos; to &apos;ymall-web&apos;" description="Rename resource &apos;smart-web&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="smart-web" name="ymall-web" stamp="1520499709077" updateReferences="true"/>
+</session>

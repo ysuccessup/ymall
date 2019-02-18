@@ -1,0 +1,8 @@
+com\ymall\manage\pojo\Content.class
+com\ymall\manage\pojo\ContentCategory.class
+com\ymall\manage\pojo\ItemCat.class
+com\ymall\manage\pojo\ItemDesc.class
+com\ymall\manage\pojo\Admin.class
+com\ymall\manage\pojo\ItemParam.class
+com\ymall\manage\pojo\Item.class
+com\ymall\manage\pojo\ItemParamItem.class

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.smart.manage.mapper.ItemMapper&apos; to &apos;MainScreenMapper&apos;&#x0D;&#x0A;- Original project: &apos;smart-manage-mapper&apos;&#x0D;&#x0A;- Original element: &apos;com.smart.manage.mapper.ItemMapper&apos;&#x0D;&#x0A;- Renamed element: &apos;com.smart.manage.mapper.MainScreenMapper&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ItemMapper&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.smart.manage.mapper{ItemMapper.java[ItemMapper" matchStrategy="1" name="MainScreenMapper" qualified="false" references="true" similarDeclarations="false" stamp="1518400571948" textual="false" version="1.0"/>
+</session>

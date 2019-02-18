@@ -1,0 +1,8 @@
+com\ymall\manage\controller\ItemParamItemController.class
+com\ymall\manage\controller\ItemCatController.class
+com\ymall\manage\controller\ItemController.class
+com\ymall\manage\controller\PageController.class
+com\ymall\manage\controller\LoginController.class
+com\ymall\manage\controller\ItemParamController.class
+com\ymall\manage\controller\PicUploadController.class
+com\ymall\manage\controller\web\ItemCatWebController.class

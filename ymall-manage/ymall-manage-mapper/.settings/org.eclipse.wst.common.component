@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ymall-manage-mapper">
+        <wb-resource deploy-path="/" source-path="/src/main/java"/>
+        <dependent-module archiveName="smart-manage-pojo.jar" deploy-path="/" handle="module:/resource/smart-manage-pojo/smart-manage-pojo">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="smart-common.jar" deploy-path="/" handle="module:/resource/smart-common/smart-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

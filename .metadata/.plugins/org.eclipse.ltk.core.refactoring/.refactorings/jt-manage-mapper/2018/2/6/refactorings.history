@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ItemMapper.java&apos; to &apos;smart-manage-mapper/src/main/java/com.smart.manage.mapper&apos;&#x0D;&#x0A;- Original project: &apos;jt-manage-mapper&apos;&#x0D;&#x0A;- Destination element: &apos;smart-manage-mapper/src/main/java/com.smart.manage.mapper&apos;&#x0D;&#x0A;- Original element: &apos;com.jt.manage.mapper.ItemMapper.java&apos;" description="Copy compilation unit" destination="=smart-manage-mapper/src\/main\/java&lt;com.smart.manage.mapper" element1="/src\/main\/java&lt;com.jt.manage.mapper{ItemMapper.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1518068439134" units="1" version="1.0"/>
+</session>

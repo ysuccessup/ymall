@@ -1,0 +1,9 @@
+com\ymall\manage\mapper\ItemMapper.class
+com\ymall\manage\mapper\ItemCatMapper.class
+com\ymall\manage\mapper\ItemParamItemMapper.class
+com\ymall\manage\mapper\base\mapper\SysMapper.class
+com\ymall\manage\mapper\base\mapper\SysMapperProvider.class
+com\ymall\manage\mapper\ContentMapper.class
+com\ymall\manage\mapper\ItemDescMapper.class
+com\ymall\manage\mapper\ContentCategoryMapper.class
+com\ymall\manage\mapper\ItemParamMapper.class

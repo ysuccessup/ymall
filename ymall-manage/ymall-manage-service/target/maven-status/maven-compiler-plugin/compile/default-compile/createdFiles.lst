@@ -1,0 +1,7 @@
+com\ymall\manage\service\ItemDescService.class
+com\ymall\manage\service\ItemParamItemService.class
+com\ymall\manage\service\ItemParamService.class
+com\ymall\manage\service\PropertieService.class
+com\ymall\manage\service\BaseService.class
+com\ymall\manage\service\ItemCatService.class
+com\ymall\manage\service\ItemService.class

@@ -1,0 +1,236 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <title>购物车</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="../css/iconfont/iconfont.css" rel="stylesheet"/>
+    <link href="../css/common.css" rel="stylesheet"/>
+    <link href="../css/cart.css" rel="stylesheet"/>
+</head>
+<body class="graybg-theme">
+    <!--头部-->
+        <jsp:include page="/WEB-INF/views/header.jsp">
+		    <jsp:param name="city" value="${city}"/>  
+		    <jsp:param name="userName" value="${userName}"/>      
+		</jsp:include> 
+        <div class="cart-header wrapper">
+            <div class="step-box">  
+                <div class="row">
+                    <div class="step first active col-3">
+                        <span class="num">1</span><span class="line"></span><span class="label">我的购物车</span>
+                    </div>
+                    <div class="step col-3">
+                        <span class="num">2</span><span class="line"></span><span class="label">确认订单信息</span>
+                    </div>
+                    <div class="step col-3">
+                        <span class="num">3</span><span class="line"></span><span class="label">选择支付方式</span>
+                    </div>
+                    <div class="step last col-3">
+                        <span class="num">4</span><span class="line"></span><span class="label">完成付款</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--头部-->
+
+    <div class="wrapper">
+        <table class="cart-table">
+            <thead>
+                <tr class="hd">
+                    <th width="30px" class="first"><label class="check"><input id="checkall" type="checkbox" name="all" v/><span>全选</span></label></th>
+                    <th width="430px">商品名称</th>
+                    <th width="180px">单价</th>
+                    <th width="190px">数量</th>
+                    <th width="180px">小计</th>
+                    <th width="190px">操作</th>
+                </tr>
+            </thead>
+            <c:forEach items="${cartList}" var="cart" varStatus="status">
+            	<c:set var="totalPrice"  value="${ totalPrice + (cart.itemPrice * cart.num)}"/>
+	            <tbody>
+	                <tr class="goods">
+	                    <td class="first">
+	                    	<div class="check" >
+	                    		<input id="as1" type="checkbox" name="test" value="${cart.itemId}"/>
+	                    		<input type="hidden" name="myHidden" value="${cart.itemPrice * cart.num}"/>
+	                    	</div>
+	                    </td>
+	                    <td>  
+	                        <div class="info-box">
+	                            <img src="${cart.itemImage}" alt="">
+	                            <div class="info">
+	                                <div class="name"><c:out value="${cart.itemTitle}"/></div>
+	                            </div>
+	                        </div>
+	                    </td>
+	                    <td>￥<span class="unitprice" id="unitprice${status.index }">${cart.itemPrice}</span></td>
+	                    <td>
+	                        <div class="mod-numbox cart-numbox" data-max="30">
+	                            <span class="count-minus"></span>
+	                            <input class="count-input" id="buynum-${status.index }" name="num" onkeyup="setAmount.modify('#buy-num');" value="${cart.num}"  type="text" name="num" />
+	                            <span class="count-plus" ></span>
+	                            <input type="hidden" name="goodId" id="goodId" value="${cart.itemId}">
+	                        </div>
+	                    </td>
+	                    <td class="txt-error">￥<span class="price">${cart.itemPrice * cart.num}</span></td>
+	                    <td><a class="del iconfont icon-shanchu"></a></td>
+	                </tr>
+	            </tbody>
+            </c:forEach>
+        </table>
+        <div class="cart-total-box">
+            <div class="cart-total">
+                <div class="fl">
+                    <div class="back"><a href="${pageContext.request.contextPath}/index">继续购物</a></div><div class="count">共 <span class="num" id="totalNum">1</span> 件商品， 已选择 <span class="num" id="selectedNum">1</span> 件</div>
+                </div>
+                <div class="fr">
+                    <a class="go-account ui-btn-theme" onclick="goBuy()">去结算</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--脚部-->
+    <div class="fatfooter">
+
+    </div>
+    <!--脚部-->
+</body>
+<script src="../js/jquery.js"></script>
+<link rel="stylesheet" href="../js/icheck/style.css"/>
+<script src="../js/icheck/icheck.min.js"></script>
+<script src="../js/global.js"></script>
+<script>
+	$(".check").click(function(){
+		var num = document.getElementsByName("text").length;
+		alert(num);  
+		var count = $("input[type='checkbox']:checked").length;
+		alert(count);
+		if(num == count){
+			$("#checkall").prop("checked", true);
+		}
+	});
+	
+	function onNumChange() {
+	    var t = Number($("#buy-num").val()), e = $("#gift-tips a"), i = e.attr("href");
+	    e.length && e.attr("href", i.replace(/pcount=\d+/, "pcount=" + t))
+	}
+	
+	var itemId = $("#goodId").val();
+	
+	function goBuy(){
+		    obj = document.getElementsByName("test");
+		    check_val = [];
+		    for(k in obj){
+		        if(obj[k].checked)
+		            check_val.push(obj[k].value);
+		    }
+		    if(check_val.length>0){
+		    	
+			    window.location="${pageContext.request.contextPath}/order/create?checkval="+check_val;
+		    }else{
+		    	alert('请首先选择至少一件商品!');
+		    }
+	}
+	
+	$(".count-plus").click(function(){
+		var id = $($(this).parent().children().first().next()).attr("id");
+		setAmount = {min: 1,max: 199,count: $("#"+id).val(),countEl: $("#"+id),buyLink: $("#choose-btn-append .btn-append"),targetLink: $("#choose-btn-append .btn-append"),matchCountKey: ["pcount", "pCount", "num"],
+		add: function() {
+	   		return this.count >= this.max ? !1 : (this.count++, this.countEl.val(this.count), this.setBuyLink(), void 0)
+		},
+		setBuyLink: function() {
+		    var t = this;
+		    t.targetLink.each(function() {
+		        var e, i, s = $(this), a = s.attr("href"), n = a.split("?")[1];
+		        (function() {
+		            for (var o = 0; t.matchCountKey.length > o; o++)
+		                if (i = RegExp(t.matchCountKey[o] + "=\\d+"), i.test(n))
+		                    return e = a.replace(i, t.matchCountKey[o] + "=" + t.count), s.attr("href", e), !1
+		        })()
+		    }), window.getPOPDeliveCash && getPOPDeliveCash(), onNumChange()
+		}};
+		setAmount.add();
+		var num = parseInt($("#"+id).val());
+		var s = id.split("-");
+		$(this).parent().parent().next().children().text($("#unitprice"+s[1]).text()*num);
+		var itemId = $(this).parent().children("input:last-child").val();
+		$.ajax({
+			type:"POST",
+			url:"${pageContext.request.contextPath}/cart/update/num/"+itemId+"/"+num,
+			dataType:"json",
+		});
+	 });
+	
+	 $(".count-minus").click(function(){
+	    var id = $($(this).parent().children().first().next()).attr("id");
+	    setAmount = {min: 1,max: 199,count: $("#"+id).val(),countEl: $("#"+id),buyLink: $("#choose-btn-append .btn-append"),targetLink: $("#choose-btn-append .btn-append"),matchCountKey: ["pcount", "pCount", "num"],
+   		reduce: function() {
+   	    	return this.count <= this.min ? !1 : (this.count--, this.countEl.val(this.count), this.setBuyLink(), void 0)
+   		},
+   		setBuyLink: function() {
+   		    var t = this;
+   		    t.targetLink.each(function() {
+   		        var e, i, s = $(this), a = s.attr("href"), n = a.split("?")[1];
+   		        (function() {
+   		            for (var o = 0; t.matchCountKey.length > o; o++)
+   		                if (i = RegExp(t.matchCountKey[o] + "=\\d+"), i.test(n))
+   		                    return e = a.replace(i, t.matchCountKey[o] + "=" + t.count), s.attr("href", e), !1
+   		        })()
+   		    }), window.getPOPDeliveCash && getPOPDeliveCash(), onNumChange()
+   		}};
+		setAmount.reduce();
+		var num = parseInt($("#"+id).val());
+		var s = id.split("-");
+		$(this).parent().parent().next().children().text($("#unitprice"+s[1]).text()*num);
+		var itemId = $(this).parent().children("input:last-child").val();
+		if(parseInt(num)>parseInt("0")){
+			$.ajax({
+				type:"POST",
+				url:"${pageContext.request.contextPath}/cart/update/num/"+itemId+"/"+num,
+				dataType:"json",
+			});
+		}
+	 });
+	 
+   $(function () {
+
+        $('.check input').iCheck({
+            checkboxClass: 'sty1-checkbox'
+        });
+        $('#checkall').on('ifClicked',function () {
+            //全选
+            if ($(this).is(':checked')) {
+                $('.check input').iCheck('uncheck');
+            }
+            else {
+                $('.check input').iCheck('check');
+            }
+         })
+         
+   });
+   
+	$(".goods .del").click(function(){
+		$.ajax({
+			type:"POST",
+			url:"${pageContext.request.contextPath}/cart/delete/"+itemId,
+			dataType:"json",
+			success:function(data){
+				window.location.reload();
+			},
+			error:function(){
+				window.location.reload();
+			}
+		})
+	 })   
+
+</script>
+</html>

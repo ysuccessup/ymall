@@ -1,0 +1,63 @@
+1518400525401	Rename type 'ItemController'
+1518400594786	Rename resource 'ItemMapper.xml'
+1518400934977	Delete element
+1518401018293	Delete element
+1518416436163	Rename resource 'login.jsp'
+1518416450903	Delete elements
+1518416456304	Delete elements
+1518416468784	Delete elements
+1518416805043	Delete elements
+1518416811717	Delete elements
+1518416835332	Rename resource 'Account_Details.html'
+1518416850125	Rename resource 'Add_Brand.html'
+1518416906328	Rename resource 'admin_Competence.html'
+1518416912598	Rename resource 'admin_info.html'
+1518416918253	Rename resource 'administrator.html'
+1518416922636	Rename resource 'Ads_list.html'
+1518416927449	Rename resource 'advertising.html'
+1518416932589	Rename resource 'Amounts.html'
+1518416937307	Rename resource 'article_add.html'
+1518416941336	Rename resource 'article_list.html'
+1518416945357	Rename resource 'article_Sort.html'
+1518416949439	Rename resource 'Brand_detailed.html'
+1518416960345	Rename resource 'Brand_Manage.html'
+1518416965684	Rename resource 'Category_Manage.html'
+1518416969258	Rename resource 'Competence.html'
+1518416973696	Rename resource 'Cover_management.html'
+1518416978505	Rename resource 'Feedback.html'
+1518416982676	Rename resource 'Guestbook.html'
+1518416987148	Rename resource 'home.html'
+1518416991308	Rename resource 'index.html'
+1518416996463	Rename resource 'integration.html'
+1518417001188	Rename resource 'login.html'
+1518417005754	Rename resource 'member-Grading.html'
+1518417010213	Rename resource 'member-show.html'
+1518417014470	Rename resource 'Order_Chart.html'
+1518417018578	Rename resource 'order_detailed.html'
+1518417022749	Rename resource 'Order_handling.html'
+1518417027242	Rename resource 'Orderform.html'
+1518417033299	Rename resource 'Payment_Configure.html'
+1518417037707	Rename resource 'Payment_details.html'
+1518417042498	Rename resource 'payment_method.html'
+1518417047334	Rename resource 'picture-add.html'
+1518417051763	Rename resource 'product-category-add.html'
+1518417056604	Rename resource 'Products_List.html'
+1518417060699	Rename resource 'Refund_detailed.html'
+1518417065191	Rename resource 'Refund.html'
+1518417069738	Rename resource 'Shop_list.html'
+1518417073594	Rename resource 'shopping_detailed.html'
+1518417078399	Rename resource 'Shops_Audit.html'
+1518417082338	Rename resource 'Sort_ads.html'
+1518417087737	Rename resource 'System_Logs.html'
+1518417092878	Rename resource 'System_section.html'
+1518417096927	Rename resource 'Systems.html'
+1518417101567	Rename resource 'transaction.html'
+1518417108643	Rename resource 'user_list.html'
+1518417709783	Delete elements
+1518418792419	Delete elements
+1518419529125	Delete element
+1518419689640	Delete element
+1518421176987	Delete element
+1518424424898	Delete elements
+1518424612031	Rename resource 'payment_method.jsp'
+1518424654433	Rename resource 'Orderform.jsp'

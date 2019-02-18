@@ -1,0 +1,3 @@
+127.0.0.1 - - [21/Mar/2018:14:18:22 +0800] "GET /item/query/536563 HTTP/1.0" 200 373 http-bio-8081-exec-1 924
+127.0.0.1 - - [21/Mar/2018:14:18:27 +0800] "GET /item/query/item/desc/536563 HTTP/1.0" 200 37 http-bio-8081-exec-2 48
+127.0.0.1 - - [21/Mar/2018:14:18:29 +0800] "GET /item/param/item/query/536563 HTTP/1.0" 200 37 http-bio-8081-exec-3 296
